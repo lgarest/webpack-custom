@@ -3,7 +3,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // creates our HTML serving the webpack bundles
 const htmlPlugin = new HtmlWebpackPlugin({
@@ -22,7 +22,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
  */
 const hotModulePlugin = new webpack.HotModuleReplacementPlugin({});
 
-const cleanPlugin = new CleanWebpackPlugin(['dist']);
+const cleanPlugin = new CleanWebpackPlugin();
 
 const config = {
   entry: {
@@ -71,11 +71,7 @@ const config = {
       // },
     ],
   },
-  plugins: [
-    htmlPlugin,
-    hotModulePlugin,
-    cleanPlugin,
-  ],
+  plugins: [htmlPlugin, hotModulePlugin, cleanPlugin],
 };
 
 module.exports = config;
