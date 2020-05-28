@@ -3,7 +3,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
   entry: {
@@ -68,7 +68,7 @@ const config = {
      */
     new webpack.HotModuleReplacementPlugin({}),
 
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
   ],
 };
 
